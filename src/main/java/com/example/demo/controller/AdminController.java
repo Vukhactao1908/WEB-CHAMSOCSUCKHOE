@@ -1,6 +1,5 @@
 package com.example.demo.controller;
 
-import com.example.demo.dto.request.ProductCreationRequest;
 import com.example.demo.entity.Product;
 import com.example.demo.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,7 +48,13 @@ public class AdminController {
 
     }
 
-
+    /*Chức năng xóa sản phẩm
+    gọi phương thức xóa sản phẩm từ ProductService
+    và cập nhật lại trang danh sách sản phẩm
+    Khi nhấn nút xóa từ trang page-list-product
+    sẽ có hàm onclick được thêm vào trong thẻ <a> để xác nhận hành động xóa sản phẩm
+    sau khi nhấn có sẽ thực hiện phương thức deleteProduct và cập nhật lại trang danh sách sản phẩm
+    * */
     @GetMapping("/delete-product/{productId}")
     String deleteProduct(@PathVariable("productId") String productId) {
         if (this.productService.deleteProduct(productId)) {

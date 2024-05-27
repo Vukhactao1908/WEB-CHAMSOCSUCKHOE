@@ -37,6 +37,10 @@ public class ProductService {
         return productRepository.save(product);
     }
 
+
+    /*Chức năng xóa sản phẩm
+    xóa sản phẩm dựa vào ID được nhận
+    * */
     public boolean deleteProduct(String userId){
         try {
             this.productRepository.deleteById(userId);
